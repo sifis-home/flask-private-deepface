@@ -1,0 +1,10 @@
+version: '2.2'
+
+services:
+  app:
+    image: flask-private-deepface
+    # ports:
+    #   - 8090:8090
+    # devices:
+    #   - '/dev/video0:/dev/video0'
+    network_mode: "host"

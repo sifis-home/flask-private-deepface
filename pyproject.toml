@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "flask-private-deepface"
+version = "0.0"
+description = "Privacy-Aware Face Recognition"
+authors = ["WisamAbbasi <wesam.alabbasi@iit.cnr.it>"]
+repository = "https://github.com/sifis-home/flask-private-deepface"
+license = "MIT"
+classifiers = [
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3 :: Only",
+]
+include = ["README.md", "LICENSE.md", "flask-private-deepface/data/*"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+opencv-python = "^4.7.0.72"
+opencv-python-headless = "^4.7.0.72"
+opencv-contrib-python = "^4.7.0.72"
+numpy = "1.24.3"
+flask = "^2.2.2"
+websocket-client = "1.6.1"
+rel = "0.4.9"
+requests = "2.28.2"
+dlib = "^19.24.0"
+pandas = "^1.5.3"
+gdown = "^4.7.0"
+tqdm = "^4.65.0"
+Pillow = "^9.5.0"
+keras = "^2.12.0"
+tensorflow-io-gcs-filesystem = "^0.24.0"
+tensorflow = "^2.8.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.1"
+pre-commit = "^3.0.4"
+black = "^23.1.0"
+isort = "^5.12.0"
+ruff = "^0.0.63"
+coverage = {extras = ["toml"], version = "^7.1.0"}
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "pip>=22.1.2"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.ruff]
+line-length = 79
+select = [
+    "F401",
+    "F403",
+]
+
+[tool.coverage.run]
+omit = [".*", "*/site-packages/*"]
+
+[tool.coverage.report]
+fail_under = 60

@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: flask-private-deepface
+Source: https://github.com/sifis-home/flask-private-deepface
+
+Files: *
+Copyright: 2022 sifis-home
+License: MIT
