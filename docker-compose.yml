@@ -3,6 +3,6 @@ version: '2.2'
 services:
   app:
     image: flask-private-deepface
-    # devices:
-    #   - '/dev/video0:/dev/video0'
+    devices:
+      - '/dev/video0:/dev/video0'
     network_mode: "host"
