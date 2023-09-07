@@ -30,7 +30,7 @@ The SIFIS-Home face recognition analytic is composed of a pipeline of the follow
 
 Privacy-Aware Face Recognition is intended to run in a docker container on port 8090. The Dockerfile at the root of this repo describes the container. To build and run it execute the following commands:
 
-`docker build -t flask_private_deepface .`
+`docker build -t flask-private-deepface .`
 
 `docker-compose up`
 
