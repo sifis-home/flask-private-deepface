@@ -1,3 +1,4 @@
+import os
 from unittest.mock import patch
 
 import cv2
@@ -37,8 +38,9 @@ elif tf_major_version == 2:
 
 def test_DeepFace_extract_faces():
     target_size = functions.find_target_size(model_name="VGG-Face")
+    img_path = os.path.join("database", "Jack.jpg")
     face_objs = DeepFace.extract_faces(
-        img_path="database/Jack.jpg",
+        img_path=img_path,
         target_size=target_size,
         detector_backend="opencv",
         enforce_detection=False,
@@ -171,7 +173,7 @@ def test_normalize_input():
     expected_result_img = img
     expected_result_img *= 255
 
-    assert type(result_img) == type(result_img)
+    # assert type(result_img) == type(result_img)
 
 
 def test_find_target_size():
