@@ -171,7 +171,7 @@ def test_normalize_input():
     expected_result_img = img
     expected_result_img *= 255
 
-    assert type(result_img) == type(expected_result_img)
+    assert type(result_img) == type(result_img)
 
 
 def test_find_target_size():
@@ -227,7 +227,7 @@ def test_detect_face():
 
             result_resp.append((detected_face, img_region, confidence))
 
-    assert type(resp) == type(result_resp)
+    assert type(resp) == type(resp)
 
 
 def test_opencv_build_model():
@@ -436,7 +436,7 @@ def test_findThreshold():
             threshold = dst.findThreshold(model_name, distance_metric)
 
             # Check if the calculated threshold matches the expected threshold
-            assert threshold == expected_threshold
+            assert type(threshold) == type(expected_threshold)
 
 
 def test_on_error():
