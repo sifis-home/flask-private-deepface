@@ -1,4 +1,3 @@
-import os
 from unittest.mock import patch
 
 import cv2
@@ -38,9 +37,8 @@ elif tf_major_version == 2:
 
 def test_DeepFace_extract_faces():
     target_size = functions.find_target_size(model_name="VGG-Face")
-    img_path = os.path.join("database", "Jack.jpg")
     face_objs = DeepFace.extract_faces(
-        img_path=img_path,
+        img_path="database/Sara.jpg",
         target_size=target_size,
         detector_backend="opencv",
         enforce_detection=False,
@@ -56,7 +54,7 @@ def test_DeepFace_extract_faces():
 
 
 def test_extract_faces():
-    img = "database/Jack.jpg"
+    img = "database/Sara.jpg"
     target_size = (224, 224)
     detector_backend = "opencv"
     grayscale = False
@@ -166,14 +164,14 @@ def test_extract_faces():
 
 
 def test_normalize_input():
-    img = cv2.imread("database/Jack.jpg")
+    img = cv2.imread("database/Sara.jpg")
     result_img = functions.normalize_input(img, normalization="base")
     result_img2 = functions.normalize_input(img, normalization="Facenet")
 
     expected_result_img = img
     expected_result_img *= 255
 
-    # assert type(result_img) == type(result_img)
+    assert type(result_img) == type(result_img)
 
 
 def test_find_target_size():
@@ -201,7 +199,7 @@ def test_detect_face():
     resp = []
     result_resp = []
     detected_face = None
-    img = cv2.imread("database/Jack.jpg")
+    img = cv2.imread("database/Sara.jpg")
     align = True
     detector = OpenCvWrapper.build_model()
     resp = OpenCvWrapper.detect_face(detector, img, align=True)
