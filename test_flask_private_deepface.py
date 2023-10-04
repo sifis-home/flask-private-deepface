@@ -38,13 +38,13 @@ elif tf_major_version == 2:
 def test_DeepFace_extract_faces():
     target_size = functions.find_target_size(model_name="VGG-Face")
     face_objs = DeepFace.extract_faces(
-        img_path="database/Sara.jpg",
+        img_path="database/Paul.jpg",
         target_size=target_size,
         detector_backend="opencv",
         enforce_detection=False,
     )
     face_objs2 = DeepFace.extract_faces(
-        img_path="database/Sara.jpg",
+        img_path="database/Maria.jpg",
         target_size=target_size,
         detector_backend="opencv",
         enforce_detection=False,
@@ -54,7 +54,7 @@ def test_DeepFace_extract_faces():
 
 
 def test_extract_faces():
-    img = "database/Sara.jpg"
+    img = "database/Paul.jpg"
     target_size = (224, 224)
     detector_backend = "opencv"
     grayscale = False
@@ -164,7 +164,7 @@ def test_extract_faces():
 
 
 def test_normalize_input():
-    img = cv2.imread("database/Sara.jpg")
+    img = cv2.imread("database/Paul.jpg")
     result_img = functions.normalize_input(img, normalization="base")
     result_img2 = functions.normalize_input(img, normalization="Facenet")
 
@@ -199,7 +199,7 @@ def test_detect_face():
     resp = []
     result_resp = []
     detected_face = None
-    img = cv2.imread("database/Sara.jpg")
+    img = cv2.imread("database/Paul.jpg")
     align = True
     detector = OpenCvWrapper.build_model()
     resp = OpenCvWrapper.detect_face(detector, img, align=True)
@@ -247,7 +247,7 @@ def test_opencv_build_model():
 # from deepface.commons import functions
 
 # def test_detect_face():
-#     img = cv2.imread("database/Jack.jpg")
+#     img = cv2.imread("database/Paul.jpg")
 #     detector_backend = "opencv"
 #     face_detector = FaceDetector.build_model(detector_backend)
 
